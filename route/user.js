@@ -18,6 +18,7 @@ router.get("/" , (req , res) => {
 router.post("/" , (req , res) => {
     console.log(req.body)
     const user = new User(req.body)
+    user.save()
     res.status(200).send({message : "done"})
 })
 
