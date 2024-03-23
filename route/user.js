@@ -1,4 +1,5 @@
-import express from 'express'
+import express from 'express';
+import User from '../models/User';
 
 const router = express.Router();
 
@@ -14,6 +15,11 @@ router.get("/" , (req , res) => {
     res.status(200).send(arr)
 })
 
+router.post("/" , (req , res) => {
+    console.log(req.body)
+    const user = new User(req.body)
+    res.status(200).send({message : "done"})
+})
 
 
 
